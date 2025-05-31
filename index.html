@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideCompare - Best Price Comparison</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <video src="/car vedio.mp4" controls autoplay></video> -->
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="carbg.png" alt="RideCompare Logo">
+            <span>RideCompare</span>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#compare">Compare Prices</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        
+        <div class="content">
+            <h1><span id="C" style="color: crimson; ">Compare </span>& Book  <span style="color: goldenrod;">Your Ride</span> at the <span style="color: darkgreen;">Lowest Price!</span</h1><br>
+            <p >Instantly compare fares from <span style="color: goldenrod;">Ola</span>,<span style="color: lightseagreen;">Uber</span>,and <span style="color: orangered;"> Rapido</span> and book the best deal in seconds.</p>
+            
+            <!-- Search Form -->
+            <form class="search-form" id="ride-form">
+                <input type="text" id="pickup"2 name="pickup" placeholder="Enter Pickup Location" required>
+                <input type="text" id="drop" name="drop" placeholder="Enter Drop Location" required>             
+                
+                <input type="datetime-local" id="time" name="time" required>
+                <a href="#compare"></a>
+                <button onclick="getfareEstimate()"    type="submit" class="cta-btn">Search & Compare</button>
+            </a>
+            </form>
+        </div>
+
+        <!-- Animated Car Container -->
+        <div class="car-container">
+            <img src="nano.png" alt="Moving Car" class="car">
+        </div>
+    </section>
+  <!-- Comparison Section -->
+  <section id="compare" class="compare-section">
+    <h2>🔍 Compare Ride Prices</h2>
+    <div class="comparison-container">
+        <table class="price-table" id="priceTable">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Price (₹)</th>
+                    <th>Book Now</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="olaRow">
+                    <td>Ola</td>
+                    <td id="olaPrice">---</td>
+                    <td><a href="#" class="book-btn ola-btn" target="_blank">Book Ola</a></td>
+                </tr>
+                <tr id="uberRow">
+                    <td>Uber</td>
+                    <td id="uberPrice">---</td>
+                    <td><a href="#" class="book-btn uber-btn" target="_blank">Book Uber</a></td>
+                </tr>
+                <tr id="rapidoRow">
+                    <td style="color: black;">Rapido</td>
+                    <td id="rapidoPrice">---</td>
+                    <td><a href="#" class="book-btn rapido-btn" target="_blank">Book Rapido</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!-- Company Profile Section -->
+<section id="about" class="company-section">
+    <div class="container">
+        <!-- Company Content -->
+        <div class="company-content">
+            <h2>🚀 Why Choose RideCompare?</h2>
+            <p>
+                <strong>RideCompare</strong> is your one-stop solution for comparing ride prices across <span class="highlight">Ola, Uber, and Rapido.</span> We ensure you get the <span class="highlight">lowest price</span> for your ride, saving both time and money.
+            </p>
+            <p>
+                Our advanced AI-powered platform updates prices in real-time and redirects you securely to your preferred service for hassle-free booking.
+            </p>
+            <ul class="company-features">
+                <li>⚡ <strong>Fast Comparison:</strong> Instant fare updates for informed decisions.</li>
+                <li>🔒 <strong>Safe & Secure:</strong> Redirects with 100% secure connection.</li>
+                <li>💸 <strong>Lowest Price:</strong> Highlighting the best available deal.</li>
+            </ul>
+            
+        </div>
+
+        <!-- Company Image -->
+        <div class="company-image">
+            <img src="/carman-removebg-preview.png" alt="RideCompare Startup" class="startup-img">
+        </div>
+    </div>
+</section>
+<!-- Contact & Support Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <!-- Contact Content -->
+        <div class="contact-content">
+            <h2> <span style="color: red;">📞</span> Get in Touch</h2>
+            <p>
+                We’re here to help! Whether you have questions about your ride comparison, technical issues, or suggestions – reach out to us anytime.
+            </p>
+            <ul class="contact-details">
+                <li>📧 <strong>Email:</strong> <a href="mailto:support@ridecompare.com"></a></li>rohitsingh544133@gmail.com
+                <li>📱 <strong style="color: green;">WhatsApp:</strong> <a href="https://wa.me/1234567890" target="_blank">+91 8910556405</a></li>
+            </ul>
+        </div>
+
+        <!-- Support Form -->
+        <div class="contact-form">
+            <h3>💬 Drop Us a Message</h3>
+            <form id="supportForm" action="#">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- FAQ Section -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">How does RideCompare work? <span class="faq-toggle">+</span></button>
+                <div class="faq-answer">
+                    <p>RideCompare instantly compares prices from Ola, Uber, and Rapido, providing you with the best available option for your route.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is RideCompare free to use? <span class="faq-toggle">+</span></button>
+                <div class="faq-answer">
+                    <p>Yes, RideCompare is 100% free to use. You only pay for the ride booked through your preferred service.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do I need to create an account? <span class="faq-toggle">+</span></button>
+                <div class="faq-answer">
+                    <p>Creating an account is optional. However, signing up allows you to save your ride preferences and access exclusive offers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is my payment secure? <span class="faq-toggle">+</span></button>
+                <div class="faq-answer">
+                    <p>Yes, all payments are processed through the respective service providers, ensuring complete security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/carbg.png" alt="RideCompare Logo">
+                <h3>RideCompare</h3>
+            </div>
+            <p>Your go-to platform for comparing the best ride prices from Ola, Uber, and Rapido.</p>
+
+            <!-- Footer Social Icons -->
+            <div class="footer-social">
+                <a href="#" target="_blank" class="social-icon facebook">📘</a>
+                <a href="#" target="_blank" class="social-icon twitter">🐦</a>
+                <a href="#" target="_blank" class="social-icon instagram">📸</a>
+                <a href="#" target="_blank" class="social-icon linkedin">💼</a>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">🏡 Home</a></li>
+                <li><a href="#contact">📞 Contact</a></li>
+                <li><a href="#faq">❓ FAQ</a></li>
+                <li><a href="#services">🚗 Services</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div class="footer-newsletter">
+            <h4>📧 Subscribe to Our Newsletter</h4>
+            <form id="newsletter-form" action="#">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta-btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 RideCompare. All Rights Reserved | Built with ❤️ by Rohit Singh.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
